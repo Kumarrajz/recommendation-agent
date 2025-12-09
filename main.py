@@ -2,11 +2,12 @@ import os
 import json
 from typing import List, Optional
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 from google import genai
 from google.genai import types
+import google.genai.errors as genai_errors
 
 
 # ==========================
@@ -16,6 +17,11 @@ from google.genai import types
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
     raise RuntimeError("GEMINI_API_KEY environment variable is not set")
+
+# Optional: allow overriding the model via env var. Keep original default for compatibility.
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "models/gemini-2.5-flash")
+GEMINI_FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL", "models/gemini-2.0-flash")
+
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
@@ -208,6 +214,11 @@ def ai_pick_recommendation_ids(
     candidates: List[Product],
     limit: int,
 ) -> List[int]:
+    """
+    Try to use Gemini to pick candidate IDs.
+    If quota/any error happens, fall back to simple deterministic logic:
+    - Just return the first `limit` candidates.
+    """
     primary_dict = primary.model_dump()
     candidates_dict = [c.model_dump() for c in candidates]
 
@@ -233,24 +244,43 @@ Return ONLY valid JSON in this exact format:
 }}
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.0-pro",
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            temperature=0.3,
-            max_output_tokens=256,
-        ),
-    )
+    # --- Try primary + fallback models; if anything fails, we use deterministic fallback ---
+    models_to_try = [GEMINI_MODEL, GEMINI_FALLBACK_MODEL]
+    response = None
 
+    for model_name in models_to_try:
+        if not model_name:
+            continue
+        try:
+            response = client.models.generate_content(
+                model=model_name,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    temperature=0.3,
+                    max_output_tokens=256,
+                ),
+            )
+            break  # success
+        except genai_errors.ClientError:
+            # On any Gemini error (quota, auth, etc.), just try next model
+            response = None
+            continue
+
+    # If no model succeeded, non-AI fallback: simply take first N candidate IDs
+    if response is None:
+        return [c.id for c in candidates[:limit]]
+
+    # Parse model response
     try:
         parsed = json.loads(response.text)
     except json.JSONDecodeError:
-        return []
+        # Bad JSON from model → fallback
+        return [c.id for c in candidates[:limit]]
 
     rec_ids = parsed.get("recommendation_ids", [])
     if not isinstance(rec_ids, list):
-        return []
+        return [c.id for c in candidates[:limit]]
 
     candidate_ids = {c.id for c in candidates}
     clean_ids: List[int] = []
@@ -262,6 +292,9 @@ Return ONLY valid JSON in this exact format:
         if rid_int in candidate_ids and rid_int not in clean_ids:
             clean_ids.append(rid_int)
 
+    # Apply limit & if model returned nothing, still fall back
+    if not clean_ids:
+        return [c.id for c in candidates[:limit]]
     return clean_ids[:limit]
 
 
