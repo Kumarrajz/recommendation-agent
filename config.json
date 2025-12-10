@@ -1,0 +1,9 @@
+{
+  "GEMINI_MODEL": "models/gemini-2.5-flash",
+  "GEMINI_FALLBACK_MODEL": "models/gemini-2.0-flash",
+  "USE_MONGO": false,
+  "MONGO_URI": "mongodb://localhost:27017",
+  "MONGO_DB": "recommendation_db",
+  "MONGO_COLLECTION": "products",
+  "PRODUCTS_FILE": "products.json"
+}

@@ -1,9 +1,13 @@
 import os
 import json
 from typing import List, Optional
+from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
+
+from mongo_repository import get_all_products, find_by_exact_or_partial_name
+import config
 
 from google import genai
 from google.genai import types
@@ -14,21 +18,20 @@ import google.genai.errors as genai_errors
 # Config & Client
 # ==========================
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = config.GEMINI_API_KEY or os.getenv("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
     raise RuntimeError("GEMINI_API_KEY environment variable is not set")
 
-# Optional: allow overriding the model via env var. Keep original default for compatibility.
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "models/gemini-2.5-flash")
-GEMINI_FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL", "models/gemini-2.0-flash")
-
+# Optional: allow overriding the model via env var or config file
+GEMINI_MODEL = config.GEMINI_MODEL
+GEMINI_FALLBACK_MODEL = config.GEMINI_FALLBACK_MODEL
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 app = FastAPI(
     title="Recommendation Agent API",
     version="1.0.0",
-    description="AI-powered product recommendation agent using Gemini + dummy JSON DB.",
+    description="AI-powered product recommendation agent using Gemini + configurable data source (JSON/MongoDB).",
 )
 
 
@@ -64,83 +67,7 @@ class RecommendationResponse(BaseModel):
     recommendations: List[PublicProduct]
 
 
-# ==========================
-# Dummy JSON "database"
-# ==========================
-
-FAKE_PRODUCTS_DB: List[Product] = [
-    Product(
-        id=101,
-        name="Samsung Galaxy A57",
-        category="phone",
-        brand="Samsung",
-        model="A57",
-        attributes={"port_type": "usb_c"},
-        tags=["phone", "android", "samsung", "A57"],
-    ),
-    Product(
-        id=201,
-        name="Samsung A57 Shockproof Pouch",
-        category="phone_case",
-        brand="Samsung",
-        model="A57",
-        attributes={"compatible_model": "A57", "compatible_brand": "Samsung"},
-        tags=["case", "pouch", "A57", "samsung"],
-    ),
-    Product(
-        id=202,
-        name="Samsung A57 Tempered Glass",
-        category="screen_guard",
-        brand="Generic",
-        model="A57",
-        attributes={"compatible_model": "A57", "compatible_brand": "Samsung"},
-        tags=["tempered_glass", "A57", "samsung"],
-    ),
-    Product(
-        id=203,
-        name="Samsung 25W USB-C Charger",
-        category="charger",
-        brand="Samsung",
-        model=None,
-        attributes={"port_type": "usb_c", "compatible_brand": "Samsung"},
-        tags=["charger", "usb_c", "samsung"],
-    ),
-    Product(
-        id=301,
-        name="Random Bluetooth Speaker",
-        category="speaker",
-        brand="Generic",
-        model=None,
-        attributes={},
-        tags=["speaker", "bluetooth"],
-    ),
-]
-
-
-# ==========================
-# Repository layer (dummy)
-# ==========================
-
-class ProductRepository:
-    @staticmethod
-    def find_by_exact_or_partial_name(name: str) -> Optional[Product]:
-        lowered = name.strip().lower()
-
-        # exact match
-        for p in FAKE_PRODUCTS_DB:
-            if p.name.lower() == lowered:
-                return p
-
-        # partial match
-        for p in FAKE_PRODUCTS_DB:
-            if lowered in p.name.lower():
-                return p
-
-        return None
-
-    @staticmethod
-    def get_all_products() -> List[Product]:
-        return FAKE_PRODUCTS_DB.copy()
+# Repository layer: implemented in `mongo_repository.py` (currently JSON-backed)
 
 
 # ==========================
@@ -156,7 +83,7 @@ def build_candidates(primary: Product) -> List[Product]:
     - Generic:
         * same brand or overlapping tags
     """
-    products = ProductRepository.get_all_products()
+    products = get_all_products()
     candidates: List[Product] = []
 
     for p in products:
@@ -194,13 +121,14 @@ def build_candidates(primary: Product) -> List[Product]:
                 candidates.append(p)
                 continue
 
-        # GENERIC COMPLEMENTS
-        same_brand = (p.brand is not None and p.brand == primary.brand)
-        tags_overlap = bool(set(p.tags).intersection(set(primary.tags)))
+        # GENERIC COMPLEMENTS (exclude phones to avoid recommending other phones)
+        if p.category != "phone":
+            same_brand = (p.brand is not None and p.brand == primary.brand)
+            tags_overlap = bool(set(p.tags).intersection(set(primary.tags)))
 
-        if same_brand or tags_overlap:
-            candidates.append(p)
-            continue
+            if same_brand or tags_overlap:
+                candidates.append(p)
+                continue
 
     return candidates
 
@@ -313,13 +241,22 @@ def to_public_product(prod: Product) -> PublicProduct:
 
 
 # ==========================
-# API endpoint
+# API endpoints
 # ==========================
+
+@app.get("/health")
+def health_check():
+    """Health check endpoint to verify service status."""
+    return {
+        "status": "healthy",
+        "data_source": "mongodb" if config.USE_MONGO else "json",
+        "gemini_model": config.GEMINI_MODEL
+    }
 
 @app.post("/recommendations", response_model=RecommendationResponse)
 def recommend(request: RecommendationRequest) -> RecommendationResponse:
     # 1) find primary
-    primary = ProductRepository.find_by_exact_or_partial_name(request.item_name)
+    primary = find_by_exact_or_partial_name(request.item_name)
     if not primary:
         return RecommendationResponse(primary_item=None, recommendations=[])
 

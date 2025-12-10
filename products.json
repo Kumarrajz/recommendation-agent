@@ -1,0 +1,1159 @@
+[
+  {
+    "id": 101,
+    "name": "Samsung Galaxy A57",
+    "category": "phone",
+    "brand": "Samsung",
+    "model": "A57",
+    "attributes": {
+      "port_type": "usb_c",
+      "os": "Android",
+      "storage": "128GB",
+      "color": "Black"
+    },
+    "tags": [
+      "phone",
+      "android",
+      "samsung",
+      "A57"
+    ],
+    "image_url": "https://example.com/images/samsung-galaxy-a57-black-front.jpg",
+    "description": "Samsung Galaxy A57 Android smartphone with 6.5-inch display, 128GB storage, and USB-C charging."
+  },
+  {
+    "id": 102,
+    "name": "Samsung Galaxy S24",
+    "category": "phone",
+    "brand": "Samsung",
+    "model": "S24",
+    "attributes": {
+      "port_type": "usb_c",
+      "os": "Android",
+      "storage": "256GB",
+      "color": "Graphite"
+    },
+    "tags": [
+      "phone",
+      "android",
+      "samsung",
+      "S24",
+      "flagship"
+    ],
+    "image_url": "https://example.com/images/samsung-galaxy-s24-graphite-front.jpg",
+    "description": "Samsung Galaxy S24 flagship Android phone with 6.2-inch AMOLED display and 256GB storage."
+  },
+  {
+    "id": 103,
+    "name": "Apple iPhone 15",
+    "category": "phone",
+    "brand": "Apple",
+    "model": "iPhone 15",
+    "attributes": {
+      "port_type": "usb_c",
+      "os": "iOS",
+      "storage": "128GB",
+      "color": "Blue"
+    },
+    "tags": [
+      "phone",
+      "ios",
+      "apple",
+      "iphone",
+      "iphone_15"
+    ],
+    "image_url": "https://example.com/images/apple-iphone-15-blue-front.jpg",
+    "description": "Apple iPhone 15 with 6.1-inch display, USB-C port, and 128GB storage in blue."
+  },
+  {
+    "id": 104,
+    "name": "Apple iPhone 14",
+    "category": "phone",
+    "brand": "Apple",
+    "model": "iPhone 14",
+    "attributes": {
+      "port_type": "lightning",
+      "os": "iOS",
+      "storage": "128GB",
+      "color": "Midnight"
+    },
+    "tags": [
+      "phone",
+      "ios",
+      "apple",
+      "iphone",
+      "iphone_14"
+    ],
+    "image_url": "https://example.com/images/apple-iphone-14-midnight-front.jpg",
+    "description": "Apple iPhone 14 with 6.1-inch display, Lightning connector, and 128GB storage."
+  },
+  {
+    "id": 105,
+    "name": "Google Pixel 9",
+    "category": "phone",
+    "brand": "Google",
+    "model": "Pixel 9",
+    "attributes": {
+      "port_type": "usb_c",
+      "os": "Android",
+      "storage": "256GB",
+      "color": "Obsidian"
+    },
+    "tags": [
+      "phone",
+      "android",
+      "google",
+      "pixel",
+      "pixel_9"
+    ],
+    "image_url": "https://example.com/images/google-pixel-9-obsidian-front.jpg",
+    "description": "Google Pixel 9 Android smartphone with 6.3-inch OLED display and 256GB storage."
+  },
+  {
+    "id": 106,
+    "name": "OnePlus 12R",
+    "category": "phone",
+    "brand": "OnePlus",
+    "model": "12R",
+    "attributes": {
+      "port_type": "usb_c",
+      "os": "Android",
+      "storage": "256GB",
+      "color": "Iron Gray"
+    },
+    "tags": [
+      "phone",
+      "android",
+      "oneplus",
+      "12R"
+    ],
+    "image_url": "https://example.com/images/oneplus-12r-iron-gray-front.jpg",
+    "description": "OnePlus 12R performance Android phone with 256GB storage and fast charging."
+  },
+  {
+    "id": 107,
+    "name": "Xiaomi Redmi Note 13 Pro",
+    "category": "phone",
+    "brand": "Xiaomi",
+    "model": "Redmi Note 13 Pro",
+    "attributes": {
+      "port_type": "usb_c",
+      "os": "Android",
+      "storage": "256GB",
+      "color": "Blue"
+    },
+    "tags": [
+      "phone",
+      "android",
+      "xiaomi",
+      "redmi_note_13_pro"
+    ],
+    "image_url": "https://example.com/images/xiaomi-redmi-note-13-pro-blue-front.jpg",
+    "description": "Xiaomi Redmi Note 13 Pro with 6.67-inch display and 256GB storage."
+  },
+  {
+    "id": 108,
+    "name": "Motorola Moto G Power",
+    "category": "phone",
+    "brand": "Motorola",
+    "model": "Moto G Power",
+    "attributes": {
+      "port_type": "usb_c",
+      "os": "Android",
+      "storage": "128GB",
+      "color": "Silver"
+    },
+    "tags": [
+      "phone",
+      "android",
+      "motorola",
+      "moto_g_power"
+    ],
+    "image_url": "https://example.com/images/motorola-moto-g-power-silver-front.jpg",
+    "description": "Motorola Moto G Power Android phone with long battery life and 128GB storage."
+  },
+  {
+    "id": 201,
+    "name": "Samsung A57 Shockproof Pouch",
+    "category": "phone_case",
+    "brand": "Samsung",
+    "model": "A57",
+    "attributes": {
+      "compatible_model": "A57",
+      "compatible_brand": "Samsung",
+      "material": "TPU",
+      "type": "pouch"
+    },
+    "tags": [
+      "case",
+      "pouch",
+      "A57",
+      "samsung",
+      "shockproof"
+    ],
+    "image_url": "https://example.com/images/samsung-a57-shockproof-pouch-black.jpg",
+    "description": "Shockproof TPU pouch designed for Samsung Galaxy A57, offering drop and scratch protection."
+  },
+  {
+    "id": 202,
+    "name": "Samsung A57 Tempered Glass",
+    "category": "screen_guard",
+    "brand": "Generic",
+    "model": "A57",
+    "attributes": {
+      "compatible_model": "A57",
+      "compatible_brand": "Samsung",
+      "type": "tempered_glass",
+      "hardness": "9H"
+    },
+    "tags": [
+      "tempered_glass",
+      "A57",
+      "samsung",
+      "screen_protector"
+    ],
+    "image_url": "https://example.com/images/samsung-a57-tempered-glass.jpg",
+    "description": "9H hardness tempered glass screen protector for Samsung Galaxy A57."
+  },
+  {
+    "id": 203,
+    "name": "Samsung 25W USB-C Charger",
+    "category": "charger",
+    "brand": "Samsung",
+    "model": null,
+    "attributes": {
+      "port_type": "usb_c",
+      "compatible_brand": "Samsung",
+      "wattage": "25W"
+    },
+    "tags": [
+      "charger",
+      "usb_c",
+      "samsung",
+      "25w"
+    ],
+    "image_url": "https://example.com/images/samsung-25w-usbc-charger.jpg",
+    "description": "Official Samsung 25W USB-C fast charger compatible with Samsung Galaxy phones that support USB-C."
+  },
+  {
+    "id": 204,
+    "name": "Samsung A57 Silicone Back Cover",
+    "category": "phone_case",
+    "brand": "Samsung",
+    "model": "A57",
+    "attributes": {
+      "compatible_model": "A57",
+      "compatible_brand": "Samsung",
+      "material": "silicone",
+      "finish": "matte"
+    },
+    "tags": [
+      "case",
+      "back_cover",
+      "A57",
+      "samsung",
+      "silicone"
+    ],
+    "image_url": "https://example.com/images/samsung-a57-silicone-case-black.jpg",
+    "description": "Slim matte silicone back cover for Samsung Galaxy A57 with precise cut-outs."
+  },
+  {
+    "id": 205,
+    "name": "Samsung A57 Camera Lens Protector",
+    "category": "camera_protector",
+    "brand": "Generic",
+    "model": "A57",
+    "attributes": {
+      "compatible_model": "A57",
+      "compatible_brand": "Samsung",
+      "material": "tempered_glass"
+    },
+    "tags": [
+      "camera_protector",
+      "A57",
+      "samsung"
+    ],
+    "image_url": "https://example.com/images/samsung-a57-camera-lens-protector.jpg",
+    "description": "Tempered glass camera lens protector for Samsung Galaxy A57 to prevent scratches and cracks."
+  },
+  {
+    "id": 206,
+    "name": "Samsung A57 USB-C Cable 1m",
+    "category": "cable",
+    "brand": "Samsung",
+    "model": "EP-DN975",
+    "attributes": {
+      "port_type": "usb_c",
+      "length": "1m",
+      "compatible_brand": "Samsung"
+    },
+    "tags": [
+      "cable",
+      "usb_c",
+      "A57",
+      "samsung"
+    ],
+    "image_url": "https://example.com/images/samsung-usbc-cable-1m.jpg",
+    "description": "1-meter USB-C to USB-C cable suitable for charging and data transfer for Samsung Galaxy A57 and other USB-C devices."
+  },
+  {
+    "id": 207,
+    "name": "Samsung Wireless Charger Pad",
+    "category": "wireless_charger",
+    "brand": "Samsung",
+    "model": "EP-P1100",
+    "attributes": {
+      "wireless_standard": "Qi",
+      "wattage": "15W",
+      "compatible_brand": "Samsung"
+    },
+    "tags": [
+      "wireless_charger",
+      "samsung",
+      "Qi"
+    ],
+    "image_url": "https://example.com/images/samsung-wireless-charger-pad.jpg",
+    "description": "Samsung Qi wireless charging pad with up to 15W fast charging for compatible Galaxy phones and accessories."
+  },
+  {
+    "id": 208,
+    "name": "Galaxy Buds FE",
+    "category": "earbuds",
+    "brand": "Samsung",
+    "model": "Buds FE",
+    "attributes": {
+      "wireless": true,
+      "noise_cancelling": true,
+      "compatible_brand": "Samsung"
+    },
+    "tags": [
+      "earbuds",
+      "wireless",
+      "samsung",
+      "galaxy_buds"
+    ],
+    "image_url": "https://example.com/images/samsung-galaxy-buds-fe-white.jpg",
+    "description": "Samsung Galaxy Buds FE true wireless earbuds with active noise cancellation and long battery life."
+  },
+  {
+    "id": 209,
+    "name": "Samsung Galaxy S24 Silicone Case",
+    "category": "phone_case",
+    "brand": "Samsung",
+    "model": "S24",
+    "attributes": {
+      "compatible_model": "S24",
+      "compatible_brand": "Samsung",
+      "material": "silicone"
+    },
+    "tags": [
+      "case",
+      "samsung",
+      "S24",
+      "silicone"
+    ],
+    "image_url": "https://example.com/images/samsung-s24-silicone-case-black.jpg",
+    "description": "Official silicone case for Samsung Galaxy S24 offering a soft-touch finish and grip."
+  },
+  {
+    "id": 210,
+    "name": "Samsung Galaxy S24 Rugged Case",
+    "category": "phone_case",
+    "brand": "Samsung",
+    "model": "S24",
+    "attributes": {
+      "compatible_model": "S24",
+      "compatible_brand": "Samsung",
+      "material": "polycarbonate"
+    },
+    "tags": [
+      "case",
+      "samsung",
+      "S24",
+      "rugged"
+    ],
+    "image_url": "https://example.com/images/samsung-s24-rugged-case.jpg",
+    "description": "Rugged protective case for Samsung Galaxy S24 with reinforced corners and raised edges."
+  },
+  {
+    "id": 211,
+    "name": "Samsung Galaxy S24 Tempered Glass",
+    "category": "screen_guard",
+    "brand": "Generic",
+    "model": "S24",
+    "attributes": {
+      "compatible_model": "S24",
+      "compatible_brand": "Samsung",
+      "type": "tempered_glass",
+      "hardness": "9H"
+    },
+    "tags": [
+      "screen_protector",
+      "tempered_glass",
+      "S24"
+    ],
+    "image_url": "https://example.com/images/samsung-s24-tempered-glass.jpg",
+    "description": "Edge-to-edge 9H tempered glass screen protector for Samsung Galaxy S24."
+  },
+  {
+    "id": 212,
+    "name": "Samsung 45W USB-C Super Fast Charger",
+    "category": "charger",
+    "brand": "Samsung",
+    "model": null,
+    "attributes": {
+      "port_type": "usb_c",
+      "wattage": "45W",
+      "compatible_brand": "Samsung"
+    },
+    "tags": [
+      "charger",
+      "usb_c",
+      "45w",
+      "samsung"
+    ],
+    "image_url": "https://example.com/images/samsung-45w-usbc-charger.jpg",
+    "description": "45W USB-C Super Fast Charger from Samsung for high-speed charging of compatible Galaxy phones including S24."
+  },
+  {
+    "id": 213,
+    "name": "Samsung S24 Car Mount Holder",
+    "category": "car_mount",
+    "brand": "Generic",
+    "model": "S24",
+    "attributes": {
+      "compatible_model": "S24",
+      "mount_type": "air_vent"
+    },
+    "tags": [
+      "car_mount",
+      "S24",
+      "samsung",
+      "accessories"
+    ],
+    "image_url": "https://example.com/images/samsung-s24-car-mount.jpg",
+    "description": "Adjustable air vent car mount compatible with Samsung Galaxy S24 and similar-sized smartphones."
+  },
+  {
+    "id": 214,
+    "name": "Apple iPhone 15 Silicone MagSafe Case",
+    "category": "phone_case",
+    "brand": "Apple",
+    "model": "iPhone 15",
+    "attributes": {
+      "compatible_model": "iPhone 15",
+      "compatible_brand": "Apple",
+      "material": "silicone",
+      "magsafe": true
+    },
+    "tags": [
+      "case",
+      "iphone_15",
+      "apple",
+      "magsafe"
+    ],
+    "image_url": "https://example.com/images/iphone-15-silicone-magsafe-case-blue.jpg",
+    "description": "Official Apple silicone case with MagSafe for iPhone 15, offering a soft-touch finish and magnetic accessories support."
+  },
+  {
+    "id": 215,
+    "name": "Apple iPhone 15 Clear Case",
+    "category": "phone_case",
+    "brand": "Apple",
+    "model": "iPhone 15",
+    "attributes": {
+      "compatible_model": "iPhone 15",
+      "compatible_brand": "Apple",
+      "material": "polycarbonate"
+    },
+    "tags": [
+      "case",
+      "iphone_15",
+      "apple",
+      "clear_case"
+    ],
+    "image_url": "https://example.com/images/iphone-15-clear-case.jpg",
+    "description": "Transparent clear case for iPhone 15, showcasing the phone's color while providing protection."
+  },
+  {
+    "id": 216,
+    "name": "Apple iPhone 15 Tempered Glass",
+    "category": "screen_guard",
+    "brand": "Generic",
+    "model": "iPhone 15",
+    "attributes": {
+      "compatible_model": "iPhone 15",
+      "compatible_brand": "Apple",
+      "type": "tempered_glass",
+      "hardness": "9H"
+    },
+    "tags": [
+      "screen_protector",
+      "iphone_15",
+      "apple"
+    ],
+    "image_url": "https://example.com/images/iphone-15-tempered-glass.jpg",
+    "description": "Edge-to-edge tempered glass screen protector designed for Apple iPhone 15."
+  },
+  {
+    "id": 217,
+    "name": "iPhone 15 Camera Lens Protector",
+    "category": "camera_protector",
+    "brand": "Generic",
+    "model": "iPhone 15",
+    "attributes": {
+      "compatible_model": "iPhone 15",
+      "compatible_brand": "Apple",
+      "material": "tempered_glass"
+    },
+    "tags": [
+      "camera_protector",
+      "iphone_15",
+      "apple"
+    ],
+    "image_url": "https://example.com/images/iphone-15-camera-lens-protector.jpg",
+    "description": "Tempered glass camera lens protector for iPhone 15 to guard against scratches and dust."
+  },
+  {
+    "id": 218,
+    "name": "Apple 20W USB-C Power Adapter",
+    "category": "charger",
+    "brand": "Apple",
+    "model": "A2305",
+    "attributes": {
+      "port_type": "usb_c",
+      "wattage": "20W",
+      "compatible_brand": "Apple"
+    },
+    "tags": [
+      "charger",
+      "apple",
+      "20w",
+      "usb_c"
+    ],
+    "image_url": "https://example.com/images/apple-20w-usbc-power-adapter.jpg",
+    "description": "Official Apple 20W USB-C power adapter suitable for fast charging iPhone 15 and other Apple devices."
+  },
+  {
+    "id": 219,
+    "name": "Apple MagSafe Charger",
+    "category": "wireless_charger",
+    "brand": "Apple",
+    "model": "MagSafe Charger",
+    "attributes": {
+      "wireless_standard": "MagSafe",
+      "compatible_brand": "Apple"
+    },
+    "tags": [
+      "wireless_charger",
+      "magsafe",
+      "apple"
+    ],
+    "image_url": "https://example.com/images/apple-magsafe-charger.jpg",
+    "description": "Apple MagSafe Charger for iPhone 12 and later, providing efficient wireless charging with magnetic alignment."
+  },
+  {
+    "id": 220,
+    "name": "USB-C to USB-C Cable 2m for iPhone 15",
+    "category": "cable",
+    "brand": "Apple",
+    "model": null,
+    "attributes": {
+      "port_type": "usb_c",
+      "length": "2m",
+      "compatible_brand": "Apple"
+    },
+    "tags": [
+      "cable",
+      "usb_c",
+      "iphone_15",
+      "apple"
+    ],
+    "image_url": "https://example.com/images/apple-usbc-to-usbc-cable-2m.jpg",
+    "description": "2-meter USB-C to USB-C cable for charging and syncing iPhone 15 and other USB-C Apple devices."
+  },
+  {
+    "id": 221,
+    "name": "Apple iPhone 14 Silicone Case",
+    "category": "phone_case",
+    "brand": "Apple",
+    "model": "iPhone 14",
+    "attributes": {
+      "compatible_model": "iPhone 14",
+      "compatible_brand": "Apple",
+      "material": "silicone"
+    },
+    "tags": [
+      "case",
+      "iphone_14",
+      "apple",
+      "silicone"
+    ],
+    "image_url": "https://example.com/images/iphone-14-silicone-case-midnight.jpg",
+    "description": "Soft silicone case for Apple iPhone 14 offering everyday protection and grip."
+  },
+  {
+    "id": 222,
+    "name": "Apple iPhone 14 Leather Case",
+    "category": "phone_case",
+    "brand": "Apple",
+    "model": "iPhone 14",
+    "attributes": {
+      "compatible_model": "iPhone 14",
+      "compatible_brand": "Apple",
+      "material": "leather"
+    },
+    "tags": [
+      "case",
+      "iphone_14",
+      "apple",
+      "leather"
+    ],
+    "image_url": "https://example.com/images/iphone-14-leather-case-brown.jpg",
+    "description": "Premium leather back case for iPhone 14 that develops a natural patina over time."
+  },
+  {
+    "id": 223,
+    "name": "Apple iPhone 14 Tempered Glass",
+    "category": "screen_guard",
+    "brand": "Generic",
+    "model": "iPhone 14",
+    "attributes": {
+      "compatible_model": "iPhone 14",
+      "compatible_brand": "Apple",
+      "type": "tempered_glass"
+    },
+    "tags": [
+      "screen_protector",
+      "iphone_14",
+      "apple"
+    ],
+    "image_url": "https://example.com/images/iphone-14-tempered-glass.jpg",
+    "description": "Tempered glass screen protector designed to fit Apple iPhone 14."
+  },
+  {
+    "id": 224,
+    "name": "Apple Lightning to USB-C Cable 1m",
+    "category": "cable",
+    "brand": "Apple",
+    "model": null,
+    "attributes": {
+      "port_type": "lightning",
+      "length": "1m",
+      "compatible_brand": "Apple"
+    },
+    "tags": [
+      "cable",
+      "lightning",
+      "iphone_14",
+      "apple"
+    ],
+    "image_url": "https://example.com/images/apple-lightning-to-usbc-cable-1m.jpg",
+    "description": "1-meter Lightning to USB-C cable for charging and syncing iPhone 14 and other Lightning devices."
+  },
+  {
+    "id": 225,
+    "name": "Apple EarPods with Lightning Connector",
+    "category": "earphones",
+    "brand": "Apple",
+    "model": "EarPods",
+    "attributes": {
+      "connector": "lightning",
+      "compatible_brand": "Apple"
+    },
+    "tags": [
+      "earphones",
+      "wired",
+      "apple",
+      "lightning"
+    ],
+    "image_url": "https://example.com/images/apple-earpods-lightning.jpg",
+    "description": "Wired EarPods with Lightning connector compatible with iPhone models including iPhone 14."
+  },
+  {
+    "id": 226,
+    "name": "MagSafe Battery Pack",
+    "category": "power_bank",
+    "brand": "Apple",
+    "model": "MagSafe Battery Pack",
+    "attributes": {
+      "wireless_standard": "MagSafe",
+      "capacity": "1460mAh",
+      "compatible_brand": "Apple"
+    },
+    "tags": [
+      "power_bank",
+      "magsafe",
+      "apple"
+    ],
+    "image_url": "https://example.com/images/apple-magsafe-battery-pack.jpg",
+    "description": "Compact MagSafe Battery Pack that magnetically attaches to iPhone 12 and later for on-the-go charging."
+  },
+  {
+    "id": 227,
+    "name": "Google Pixel 9 Fabric Case",
+    "category": "phone_case",
+    "brand": "Google",
+    "model": "Pixel 9",
+    "attributes": {
+      "compatible_model": "Pixel 9",
+      "compatible_brand": "Google",
+      "material": "fabric"
+    },
+    "tags": [
+      "case",
+      "pixel_9",
+      "google",
+      "fabric"
+    ],
+    "image_url": "https://example.com/images/google-pixel-9-fabric-case.jpg",
+    "description": "Fabric case for Google Pixel 9 offering a soft exterior and reliable protection."
+  },
+  {
+    "id": 228,
+    "name": "Google Pixel 9 Rugged Case",
+    "category": "phone_case",
+    "brand": "Google",
+    "model": "Pixel 9",
+    "attributes": {
+      "compatible_model": "Pixel 9",
+      "compatible_brand": "Google",
+      "material": "polycarbonate"
+    },
+    "tags": [
+      "case",
+      "pixel_9",
+      "google",
+      "rugged"
+    ],
+    "image_url": "https://example.com/images/google-pixel-9-rugged-case.jpg",
+    "description": "Heavy-duty rugged case for Google Pixel 9 designed for impact resistance."
+  },
+  {
+    "id": 229,
+    "name": "Google Pixel 9 Tempered Glass",
+    "category": "screen_guard",
+    "brand": "Generic",
+    "model": "Pixel 9",
+    "attributes": {
+      "compatible_model": "Pixel 9",
+      "compatible_brand": "Google",
+      "type": "tempered_glass"
+    },
+    "tags": [
+      "screen_protector",
+      "pixel_9",
+      "google"
+    ],
+    "image_url": "https://example.com/images/google-pixel-9-tempered-glass.jpg",
+    "description": "Tempered glass screen protector tailored for Google Pixel 9."
+  },
+  {
+    "id": 230,
+    "name": "Google 30W USB-C Charger",
+    "category": "charger",
+    "brand": "Google",
+    "model": null,
+    "attributes": {
+      "port_type": "usb_c",
+      "wattage": "30W",
+      "compatible_brand": "Google"
+    },
+    "tags": [
+      "charger",
+      "usb_c",
+      "google",
+      "30w"
+    ],
+    "image_url": "https://example.com/images/google-30w-usbc-charger.jpg",
+    "description": "Google 30W USB-C power adapter for fast charging Pixel phones and other USB-C devices."
+  },
+  {
+    "id": 231,
+    "name": "Google Pixel Stand Wireless Charger",
+    "category": "wireless_charger",
+    "brand": "Google",
+    "model": "Pixel Stand",
+    "attributes": {
+      "wireless_standard": "Qi",
+      "compatible_brand": "Google"
+    },
+    "tags": [
+      "wireless_charger",
+      "google",
+      "pixel_stand"
+    ],
+    "image_url": "https://example.com/images/google-pixel-stand-wireless-charger.jpg",
+    "description": "Pixel Stand wireless charger for Google Pixel phones with upright stand design."
+  },
+  {
+    "id": 232,
+    "name": "USB-C Wired Earbuds for Pixel",
+    "category": "earphones",
+    "brand": "Generic",
+    "model": null,
+    "attributes": {
+      "connector": "usb_c",
+      "compatible_brand": "Google"
+    },
+    "tags": [
+      "earphones",
+      "wired",
+      "usb_c",
+      "pixel"
+    ],
+    "image_url": "https://example.com/images/usb-c-wired-earbuds-black.jpg",
+    "description": "USB-C wired earbuds compatible with Google Pixel 9 and other USB-C phones."
+  },
+  {
+    "id": 233,
+    "name": "OnePlus 12R Sandstone Case",
+    "category": "phone_case",
+    "brand": "OnePlus",
+    "model": "12R",
+    "attributes": {
+      "compatible_model": "12R",
+      "compatible_brand": "OnePlus",
+      "material": "sandstone"
+    },
+    "tags": [
+      "case",
+      "oneplus",
+      "12R",
+      "sandstone"
+    ],
+    "image_url": "https://example.com/images/oneplus-12r-sandstone-case.jpg",
+    "description": "Signature sandstone finish case for OnePlus 12R providing a grippy texture."
+  },
+  {
+    "id": 234,
+    "name": "OnePlus 12R Transparent Case",
+    "category": "phone_case",
+    "brand": "OnePlus",
+    "model": "12R",
+    "attributes": {
+      "compatible_model": "12R",
+      "compatible_brand": "OnePlus",
+      "material": "TPU"
+    },
+    "tags": [
+      "case",
+      "oneplus",
+      "12R",
+      "transparent"
+    ],
+    "image_url": "https://example.com/images/oneplus-12r-transparent-case.jpg",
+    "description": "Clear TPU case for OnePlus 12R to showcase the phone design while protecting it."
+  },
+  {
+    "id": 235,
+    "name": "OnePlus 12R Tempered Glass",
+    "category": "screen_guard",
+    "brand": "Generic",
+    "model": "12R",
+    "attributes": {
+      "compatible_model": "12R",
+      "compatible_brand": "OnePlus",
+      "type": "tempered_glass"
+    },
+    "tags": [
+      "screen_protector",
+      "oneplus",
+      "12R"
+    ],
+    "image_url": "https://example.com/images/oneplus-12r-tempered-glass.jpg",
+    "description": "Tempered glass screen protector made for OnePlus 12R."
+  },
+  {
+    "id": 236,
+    "name": "OnePlus 80W SUPERVOOC Charger",
+    "category": "charger",
+    "brand": "OnePlus",
+    "model": null,
+    "attributes": {
+      "port_type": "usb_c",
+      "wattage": "80W",
+      "compatible_brand": "OnePlus"
+    },
+    "tags": [
+      "charger",
+      "oneplus",
+      "supervooc",
+      "80w"
+    ],
+    "image_url": "https://example.com/images/oneplus-80w-supervooc-charger.jpg",
+    "description": "80W SUPERVOOC fast charger for OnePlus phones including OnePlus 12R."
+  },
+  {
+    "id": 237,
+    "name": "OnePlus Car Charger 50W",
+    "category": "car_charger",
+    "brand": "OnePlus",
+    "model": null,
+    "attributes": {
+      "port_type": "usb_c",
+      "wattage": "50W",
+      "compatible_brand": "OnePlus"
+    },
+    "tags": [
+      "car_charger",
+      "oneplus",
+      "fast_charge"
+    ],
+    "image_url": "https://example.com/images/oneplus-50w-car-charger.jpg",
+    "description": "OnePlus car charger with 50W output for fast charging on the go."
+  },
+  {
+    "id": 238,
+    "name": "OnePlus Buds 3",
+    "category": "earbuds",
+    "brand": "OnePlus",
+    "model": "Buds 3",
+    "attributes": {
+      "wireless": true,
+      "noise_cancelling": true,
+      "compatible_brand": "OnePlus"
+    },
+    "tags": [
+      "earbuds",
+      "wireless",
+      "oneplus"
+    ],
+    "image_url": "https://example.com/images/oneplus-buds-3.jpg",
+    "description": "OnePlus Buds 3 true wireless earbuds with active noise cancellation."
+  },
+  {
+    "id": 239,
+    "name": "Xiaomi Redmi Note 13 Pro Case",
+    "category": "phone_case",
+    "brand": "Xiaomi",
+    "model": "Redmi Note 13 Pro",
+    "attributes": {
+      "compatible_model": "Redmi Note 13 Pro",
+      "compatible_brand": "Xiaomi",
+      "material": "TPU"
+    },
+    "tags": [
+      "case",
+      "xiaomi",
+      "redmi_note_13_pro"
+    ],
+    "image_url": "https://example.com/images/xiaomi-redmi-note-13-pro-case.jpg",
+    "description": "Flexible TPU case for Xiaomi Redmi Note 13 Pro."
+  },
+  {
+    "id": 240,
+    "name": "Xiaomi Redmi Note 13 Pro Tempered Glass",
+    "category": "screen_guard",
+    "brand": "Generic",
+    "model": "Redmi Note 13 Pro",
+    "attributes": {
+      "compatible_model": "Redmi Note 13 Pro",
+      "compatible_brand": "Xiaomi",
+      "type": "tempered_glass"
+    },
+    "tags": [
+      "screen_protector",
+      "xiaomi",
+      "redmi_note_13_pro"
+    ],
+    "image_url": "https://example.com/images/xiaomi-redmi-note-13-pro-tempered-glass.jpg",
+    "description": "Tempered glass screen guard for Xiaomi Redmi Note 13 Pro."
+  },
+  {
+    "id": 241,
+    "name": "Moto G Power Protective Case",
+    "category": "phone_case",
+    "brand": "Motorola",
+    "model": "Moto G Power",
+    "attributes": {
+      "compatible_model": "Moto G Power",
+      "compatible_brand": "Motorola",
+      "material": "TPU"
+    },
+    "tags": [
+      "case",
+      "moto_g_power",
+      "motorola"
+    ],
+    "image_url": "https://example.com/images/moto-g-power-protective-case.jpg",
+    "description": "Protective TPU case for Motorola Moto G Power with raised edges."
+  },
+  {
+    "id": 242,
+    "name": "Moto G Power Tempered Glass",
+    "category": "screen_guard",
+    "brand": "Generic",
+    "model": "Moto G Power",
+    "attributes": {
+      "compatible_model": "Moto G Power",
+      "compatible_brand": "Motorola",
+      "type": "tempered_glass"
+    },
+    "tags": [
+      "screen_protector",
+      "moto_g_power",
+      "motorola"
+    ],
+    "image_url": "https://example.com/images/moto-g-power-tempered-glass.jpg",
+    "description": "Tempered glass screen protector for Motorola Moto G Power."
+  },
+  {
+    "id": 243,
+    "name": "Motorola 20W USB-C Charger",
+    "category": "charger",
+    "brand": "Motorola",
+    "model": null,
+    "attributes": {
+      "port_type": "usb_c",
+      "wattage": "20W",
+      "compatible_brand": "Motorola"
+    },
+    "tags": [
+      "charger",
+      "motorola",
+      "usb_c"
+    ],
+    "image_url": "https://example.com/images/motorola-20w-usbc-charger.jpg",
+    "description": "20W USB-C charger for Motorola smartphones including Moto G Power."
+  },
+  {
+    "id": 244,
+    "name": "10000mAh Universal Power Bank",
+    "category": "power_bank",
+    "brand": "Generic",
+    "model": null,
+    "attributes": {
+      "capacity": "10000mAh",
+      "ports": [
+        "usb_a",
+        "usb_c"
+      ],
+      "compatible_brand": "Universal"
+    },
+    "tags": [
+      "power_bank",
+      "portable_charger",
+      "universal"
+    ],
+    "image_url": "https://example.com/images/10000mah-universal-power-bank-black.jpg",
+    "description": "Compact 10000mAh power bank with USB-A and USB-C ports compatible with most smartphones."
+  },
+  {
+    "id": 245,
+    "name": "3-in-1 Charging Cable (Lightning/USB-C/Micro-USB)",
+    "category": "cable",
+    "brand": "Generic",
+    "model": null,
+    "attributes": {
+      "connectors": [
+        "lightning",
+        "usb_c",
+        "micro_usb"
+      ],
+      "length": "1.2m",
+      "compatible_brand": "Universal"
+    },
+    "tags": [
+      "cable",
+      "multi_connector",
+      "universal"
+    ],
+    "image_url": "https://example.com/images/3-in-1-charging-cable.jpg",
+    "description": "Multi-connector 3-in-1 charging cable with Lightning, USB-C, and Micro-USB tips."
+  },
+  {
+    "id": 301,
+    "name": "Random Bluetooth Speaker",
+    "category": "speaker",
+    "brand": "Generic",
+    "model": null,
+    "attributes": {
+      "wireless": true,
+      "bluetooth_version": "5.0"
+    },
+    "tags": [
+      "speaker",
+      "bluetooth"
+    ],
+    "image_url": "https://example.com/images/random-bluetooth-speaker.jpg",
+    "description": "Portable Bluetooth speaker with wireless connectivity and built-in microphone."
+  },
+  {
+    "id": 302,
+    "name": "Wireless Earbuds with Charging Case",
+    "category": "earbuds",
+    "brand": "Generic",
+    "model": null,
+    "attributes": {
+      "wireless": true,
+      "battery_life": "20h",
+      "compatible_brand": "Universal"
+    },
+    "tags": [
+      "earbuds",
+      "wireless",
+      "universal"
+    ],
+    "image_url": "https://example.com/images/generic-wireless-earbuds.jpg",
+    "description": "True wireless earbuds with charging case and up to 20 hours total playtime."
+  },
+  {
+    "id": 303,
+    "name": "Magnetic Car Phone Holder",
+    "category": "car_mount",
+    "brand": "Generic",
+    "model": null,
+    "attributes": {
+      "mount_type": "dashboard",
+      "compatible_brand": "Universal"
+    },
+    "tags": [
+      "car_mount",
+      "universal",
+      "magnetic"
+    ],
+    "image_url": "https://example.com/images/magnetic-car-phone-holder.jpg",
+    "description": "Universal magnetic car phone holder for dashboard mounting."
+  },
+  {
+    "id": 304,
+    "name": "USB-C Wall Charger Dual Port",
+    "category": "charger",
+    "brand": "Generic",
+    "model": null,
+    "attributes": {
+      "ports": [
+        "usb_c",
+        "usb_a"
+      ],
+      "wattage": "30W",
+      "compatible_brand": "Universal"
+    },
+    "tags": [
+      "charger",
+      "wall_charger",
+      "dual_port"
+    ],
+    "image_url": "https://example.com/images/dual-port-wall-charger-30w.jpg",
+    "description": "30W dual-port wall charger with USB-C and USB-A outputs for fast charging multiple devices."
+  },
+  {
+    "id": 305,
+    "name": "Silicone Watch Strap 22mm",
+    "category": "watch_strap",
+    "brand": "Generic",
+    "model": null,
+    "attributes": {
+      "width": "22mm",
+      "material": "silicone",
+      "compatible_brand": "Universal"
+    },
+    "tags": [
+      "watch_strap",
+      "silicone",
+      "universal"
+    ],
+    "image_url": "https://example.com/images/silicone-watch-strap-22mm-black.jpg",
+    "description": "Universal 22mm silicone watch strap compatible with many Android smartwatches."
+  }
+]
