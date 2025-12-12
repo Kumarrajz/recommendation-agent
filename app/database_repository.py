@@ -256,8 +256,64 @@ def _search_postgres_by_tag(tag: str) -> List[dict]:
 
 
 # -------------------------
-# Data conversion to models
+# New Optimized Queries
 # -------------------------
+def _get_postgres_products_by_category(category: str, limit: int = 500) -> List[dict]:
+    """Fetch products by category (Postgres)."""
+    if not (PSYCOPG2_AVAILABLE and POSTGRES_DSN):
+        return []
+    conn = _get_conn()
+    if not conn:
+        return []
+    try:
+        cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        sql = """
+            SELECT id, name, category, brand, model,
+                   attributes::jsonb AS attributes,
+                   CASE WHEN tags IS NULL THEN NULL ELSE array_to_json(tags) END AS tags,
+                   image_url, description
+            FROM products
+            WHERE category = %s
+            LIMIT %s
+        """
+        cur.execute(sql, (category, limit))
+        rows = cur.fetchall()
+        cur.close()
+        return _rows_to_dicts(rows)
+    except Exception:
+        logger.exception("Postgres category query failed for category=%r", category)
+        return []
+    finally:
+        _put_conn(conn)
+
+
+def _get_postgres_products_by_brand(brand: str, limit: int = 500) -> List[dict]:
+    """Fetch products by brand (Postgres)."""
+    if not (PSYCOPG2_AVAILABLE and POSTGRES_DSN):
+        return []
+    conn = _get_conn()
+    if not conn:
+        return []
+    try:
+        cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        sql = """
+            SELECT id, name, category, brand, model,
+                   attributes::jsonb AS attributes,
+                   CASE WHEN tags IS NULL THEN NULL ELSE array_to_json(tags) END AS tags,
+                   image_url, description
+            FROM products
+            WHERE brand = %s
+            LIMIT %s
+        """
+        cur.execute(sql, (brand, limit))
+        rows = cur.fetchall()
+        cur.close()
+        return _rows_to_dicts(rows)
+    except Exception:
+        logger.exception("Postgres brand query failed for brand=%r", brand)
+        return []
+    finally:
+        _put_conn(conn)
 def _to_products(data: Iterable[dict]) -> List[object]:
     """
     Convert dicts to Pydantic Product instances (imported at runtime).
@@ -283,6 +339,38 @@ def _to_products(data: Iterable[dict]) -> List[object]:
             logger.warning("Failed to parse product item into Product model: %s; item=%r", e, item)
             # skip invalid items
     return products
+
+
+def _get_postgres_products_by_text(query: str, limit: int = 500) -> List[dict]:
+    """Fetch products where name ILIKE sequence (Postgres)."""
+    if not (PSYCOPG2_AVAILABLE and POSTGRES_DSN):
+        return []
+    conn = _get_conn()
+    if not conn:
+        return []
+    try:
+        cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        # Search name and tags
+        sql = """
+            SELECT id, name, category, brand, model,
+                   attributes::jsonb AS attributes,
+                   CASE WHEN tags IS NULL THEN NULL ELSE array_to_json(tags) END AS tags,
+                   image_url, description
+            FROM products
+            WHERE name ILIKE %s
+            OR EXISTS (SELECT 1 FROM unnest(tags) t WHERE t ILIKE %s)
+            LIMIT %s
+        """
+        wild = f"%{query}%"
+        cur.execute(sql, (wild, wild, limit))
+        rows = cur.fetchall()
+        cur.close()
+        return _rows_to_dicts(rows)
+    except Exception:
+        logger.exception("Postgres text query failed for query=%r", query)
+        return []
+    finally:
+        _put_conn(conn)
 
 
 # -------------------------
@@ -385,4 +473,87 @@ def find_by_tag(tag: str) -> List[object]:
             tag_list = [str(t).lower() for t in tags]
         if lowered in tag_list:
             results.append(p)
+    return results
+
+
+def get_products_by_category(category: str, limit: int = 500) -> List[object]:
+    """Return products matching category."""
+    if USE_POSTGRES and PSYCOPG2_AVAILABLE and POSTGRES_DSN:
+        rows = _get_postgres_products_by_category(category, limit)
+        if rows:
+            return _to_products(rows)
+    
+    # fallback
+    results = []
+    products = get_all_products()
+    for p in products:
+        try:
+            p_cat = getattr(p, "category", "")
+        except Exception:
+            p_cat = p.get("category") if isinstance(p, dict) else ""
+        if p_cat == category:
+            results.append(p)
+            if len(results) >= limit:
+                break
+    return results
+
+
+def get_products_by_brand(brand: str, limit: int = 500) -> List[object]:
+    """Return products matching brand."""
+    if USE_POSTGRES and PSYCOPG2_AVAILABLE and POSTGRES_DSN:
+        rows = _get_postgres_products_by_brand(brand, limit)
+        if rows:
+            return _to_products(rows)
+
+    # fallback
+    results = []
+    products = get_all_products()
+    for p in products:
+        try:
+            p_brand = getattr(p, "brand", "")
+        except Exception:
+            p_brand = p.get("brand") if isinstance(p, dict) else ""
+        if p_brand == brand:
+            results.append(p)
+            if len(results) >= limit:
+                break
+    return results
+
+
+def get_products_by_text_search(query: str, limit: int = 500) -> List[object]:
+    """Return products matching text query in name or tags."""
+    if not query or not query.strip():
+        return []
+    
+    if USE_POSTGRES and PSYCOPG2_AVAILABLE and POSTGRES_DSN:
+        rows = _get_postgres_products_by_text(query.strip(), limit)
+        if rows:
+            return _to_products(rows)
+
+    # fallback
+    results = []
+    products = get_all_products()
+    q = query.strip().lower()
+    for p in products:
+        try:
+            pname = str(getattr(p, "name", "") or "")
+            ptags = getattr(p, "tags", []) or []
+        except Exception:
+            pname = str(p.get("name", "") or "") if isinstance(p, dict) else ""
+            ptags = p.get("tags", []) if isinstance(p, dict) else []
+        
+        # Check name
+        if q in pname.lower():
+            results.append(p)
+            continue
+            
+        # Check tags
+        if isinstance(ptags, list):
+            for t in ptags:
+                if q in str(t).lower():
+                    results.append(p)
+                    break
+        
+        if len(results) >= limit:
+            break
     return results
